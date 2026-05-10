@@ -1,0 +1,33 @@
+<!-- VIEW TRIAGEM MÉDICA -->
+<div id="view-triagem" class="view-section" style="display:none;">
+  <div class="view-header">
+    <div class="view-title">Triagem Médica</div>
+    <div class="view-actions">
+      <select id="filter-triagem" onchange="filterTriagem()">
+          <option value="">Todos os riscos</option>
+          <option value="critico">Crítico</option>
+          <option value="grave">Grave</option>
+          <option value="medio">Médio</option>
+          <option value="baixo">Baixo</option>
+        </select>
+      </div>
+    </div>
+    <div class="table-wrapper">
+      <div style="overflow-x:auto;">
+        <table class="animals-table">
+          <thead>
+            <tr>
+              <th>CÓDIGO</th>
+              <th>ANIMAL</th>
+              <th>RISCO</th>
+              <th>LAUDO</th>
+              <th>DATA RESGATE</th>
+              <th>AÇÕES</th>
+            </tr>
+          </thead>
+          <tbody id="table-triagem-body">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

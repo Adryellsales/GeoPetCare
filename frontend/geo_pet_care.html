@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GEO Pet Care — Adoção Inteligente</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">GEO <span>Pet</span> Care</div>
+    <ul class="nav-links">
+      <li><a href="#match">Encontrar Pet</a></li>
+      <li><a href="#pets">Animais</a></li>
+      <li><a href="#transparencia">Transparência</a></li>
+      <li><a href="#voluntarios">Ser Voluntário</a></li>
+      <li><a href="#doacoes" class="nav-cta">Doar Agora</a></li>
+    </ul>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content fade-in">
+      <div class="hero-tag">IA para Adoção Responsável</div>
+      <h1>O <em>match</em> certo<br>muda tudo.</h1>
+      <p class="hero-desc">O sistema inteligente da GEO Pet Care cruza sua rotina e perfil com as características de
+        cada animal — garantindo adoções compatíveis e definitivas.</p>
+      <div class="hero-buttons">
+        <a href="javascript:void(0)" onclick="abrirModalQuiz()" class="btn-primary">🐾 Fazer o Quiz</a>
+        <a href="#doacoes" class="btn-secondary">❤️ Apoiar a ONG</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-stack" id="hero-cards">
+        <div class="pet-card">
+          <div class="pet-emoji">🐕</div>
+          <div class="pet-card-inner">
+            <div class="pet-name">Carregando...</div>
+            <div class="pet-info">Conectando ao banco...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="stats">
+    <div class="stat-item fade-in">
+      <span class="stat-number" id="stat-resgatados">...</span>
+      <div class="stat-label">Animais resgatados</div>
+    </div>
+    <div class="stat-item fade-in">
+      <span class="stat-number" id="stat-match">89%</span> <!-- Valor fixo para demonstração -->
+      <div class="stat-label">Adoções sem devolução</div>
+    </div>
+    <div class="stat-item fade-in">
+      <span class="stat-number" id="stat-lares">...</span>
+      <div class="stat-label">Lares temporários ativos</div>
+    </div>
+    <div class="stat-item fade-in">
+      <span class="stat-number" id="stat-arrecadado-total">R$ 0</span>
+      <div class="stat-label">Total Arrecadado</div>
+    </div>
+  </div>
+
+  <section id="como-funciona">
+    <p class="section-tag">Como funciona</p>
+    <h2 class="section-title">Da triagem ao <em>lar ideal</em></h2>
+    <div class="steps-grid">
+      <div class="step-card fade-in">
+        <div class="step-num">01</div>
+        <div class="step-icon">🏥</div>
+        <div class="step-title">Triagem Médica</div>
+        <div class="step-desc">Cada animal resgatado passa por laudo veterinário com classificação de risco: Crítico,
+          Grave, Médio ou Baixo.</div>
+      </div>
+      <div class="step-card fade-in">
+        <div class="step-num">02</div>
+        <div class="step-icon">📋</div>
+        <div class="step-title">Quiz de Personalidade</div>
+        <div class="step-desc">O adotante responde perguntas sobre moradia, rotina, crianças em casa e experiência com
+          animais.</div>
+      </div>
+      <div class="step-card fade-in">
+        <div class="step-num">03</div>
+        <div class="step-icon">🤖</div>
+        <div class="step-title">Match por IA</div>
+        <div class="step-desc">Nosso algoritmo cruza os dados e apresenta os animais com maior % de compatibilidade em
+          até 3 segundos.</div>
+      </div>
+      <div class="step-card fade-in">
+        <div class="step-num">04</div>
+        <div class="step-icon">🏠</div>
+        <div class="step-title">Adoção Responsável</div>
+        <div class="step-desc">O adotante escolhe um pet compatível e inicia o processo de entrevista presencial com
+          nossa equipe.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="match">
+    <div class="match-layout">
+      <div class="fade-in">
+        <p class="section-tag">Motor de IA</p>
+        <h2 class="section-title">Encontre seu <em>match</em> ideal</h2>
+        <p class="section-sub">Responda algumas perguntas rápidas e nossa Inteligência Artificial vai encontrar o pet
+          mais compatível com a sua vida — não apenas o mais fofo.</p>
+        <br><br>
+        <div class="check-item" style="border:none;padding:0;margin-bottom:0.8rem;">
+          <div class="check-icon">✓</div>
+          <span>Cruzamento de energia e rotina do adotante</span>
+        </div>
+        <div class="check-item" style="border:none;padding:0;margin-bottom:0.8rem;">
+          <div class="check-icon">✓</div>
+          <span>Compatibilidade de espaço e porte do animal</span>
+        </div>
+        <div class="check-item" style="border:none;padding:0;">
+          <div class="check-icon">✓</div>
+          <span>Resultado em menos de 3 segundos</span>
+        </div>
+      </div>
+      <div class="quiz-widget fade-in" style="text-align: center; padding: 4rem 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">✨</div>
+        <h3 style="font-family: 'Fraunces', serif; font-size: 1.6rem; color: var(--dark); margin-bottom: 1rem;">Pronto para o Match?</h3>
+        <p style="color: var(--mid); margin-bottom: 2rem; font-size: 0.95rem; max-width: 320px;">O quiz leva menos de 1 minuto e ajuda a garantir uma adoção feliz para toda a vida.</p>
+        <button class="btn-primary" onclick="abrirModalQuiz()">Começar o Quiz 🐾</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="pets">
+    <p class="section-tag">Animais disponíveis</p>
+    <h2 class="section-title">Prontos para um <em>novo lar</em></h2>
+    <div class="pets-grid" id="lista-animais">
+      <div class="empty-state">Buscando pets no banco...</div>
+    </div>
+  </section>
+
+  <section id="transparencia">
+    <div class="transp-layout">
+      <div class="fade-in">
+        <p class="section-tag">Portal da Transparência</p>
+        <h2 class="section-title">Cada real <em>prestado de contas</em></h2>
+        <p class="section-sub">Acreditamos que transparência financeira é o alicerce da confiança. Todos os dados de
+          arrecadação e gastos são públicos e atualizados em tempo real.</p>
+        <br>
+        <a href="#doacoes" class="btn-primary" style="display:inline-flex;">❤️ Fazer parte disso</a>
+      </div>
+      <div class="dashboard fade-in">
+        <div class="dash-header">📊 Dashboard Real — Maio 2026</div>
+        <div class="dash-row">
+          <span class="dash-label">Arrecadado (mês)</span>
+          <span class="dash-value" id="valor-arrecadado">R$ 0</span>
+        </div>
+        <div class="dash-row">
+          <span class="dash-label">Custos veterinários</span>
+          <span class="dash-value" id="valor-vet">R$ 0</span>
+        </div>
+        <div class="dash-row">
+          <span class="dash-label">Alimentação e cuidados</span>
+          <span class="dash-value" id="valor-alimento">R$ 0</span>
+        </div>
+        <div class="dash-row">
+          <span class="dash-label">Ocupação da sede</span>
+          <span class="dash-value" id="valor-ocupacao-texto">0 / 30</span>
+        </div>
+        <div class="bar-container">
+          <div class="bar-label"><span>Capacidade Usada</span><span id="perc-ocupacao">0%</span></div>
+          <div class="bar">
+            <div class="bar-fill" id="barra-ocupacao" style="width:0%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="doacoes">
+    <div class="doacoes-layout">
+      <div class="fade-in">
+        <p class="section-tag">Apoie a Causa</p>
+        <h2 class="section-title">Sua doação salva <em>vidas</em></h2>
+        <p class="section-sub">Contribua para manter nossa sede operando e garantir ração, medicamentos e estrutura para os animais resgatados. Não armazenamos dados bancários e suas contribuições refletem automaticamente no Portal da Transparência.</p>
+      </div>
+      
+      <div class="donate-card fade-in">
+        <div class="amount-grid">
+          <button class="amount-btn active" data-valor="30" onclick="selecionarValorDoacao(this)">R$ 30</button>
+          <button class="amount-btn" data-valor="50" onclick="selecionarValorDoacao(this)">R$ 50</button>
+          <button class="amount-btn" data-valor="100" onclick="selecionarValorDoacao(this)">R$ 100</button>
+          <button class="amount-btn" data-valor="200" onclick="selecionarValorDoacao(this)">R$ 200</button>
+          <button class="amount-btn" data-valor="500" onclick="selecionarValorDoacao(this)">R$ 500</button>
+          <div style="position: relative;">
+            <input type="number" id="valor-outro" placeholder="Outro" style="width:100%; height:100%; padding:0.8rem; border-radius:12px; border:1.5px solid rgba(255,255,255,0.2); background:transparent; color:white; font-family:'Fraunces', serif; font-size:1rem; font-weight:700; outline:none; box-sizing:border-box;" onfocus="limparValorSelecionado()">
+          </div>
+        </div>
+        
+        <div class="payment-methods">
+          <button class="pay-method active" data-metodo="pix" onclick="selecionarMetodoDoacao(this)">Pix</button>
+          <button class="pay-method" data-metodo="cartao" onclick="selecionarMetodoDoacao(this)">Cartão</button>
+          <button class="pay-method" data-metodo="boleto" onclick="selecionarMetodoDoacao(this)">Boleto</button>
+        </div>
+        
+        <label class="recurring-check">
+          <input type="checkbox" id="doacao-recorrente">
+          Tornar esta doação mensal
+        </label>
+        
+        <button class="donate-final-btn" onclick="enviarDoacao()">Contribuir Agora 🐾</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="voluntarios">
+  <p class="section-tag">Lar temporário</p>
+  <h2 class="section-title">Abra seu coração e <em>seu espaço</em></h2>
+  <p class="section-sub">Voluntários de lar temporário são essenciais para acolher animais excedentes enquanto aguardam adoção definitiva. Processo de validação 100% seguro.</p>
+
+  <div class="vol-layout">
+    <div class="vol-form">
+      <h3>Cadastro de Voluntário</h3>
+      <div class="form-group">
+        <label>Nome completo</label>
+        <input type="text" id="vol-nome" placeholder="Seu nome completo">
+      </div>
+      <div class="form-group">
+        <label>E-mail</label>
+        <input type="email" id="vol-email" placeholder="seu@email.com">
+      </div>
+      <div class="form-group">
+        <label>Senha</label>
+        <input type="password" id="vol-senha" placeholder="Crie uma senha segura">
+      </div>
+      <div class="form-group">
+        <label>CPF</label>
+        <input type="text" id="vol-cpf" placeholder="000.000.000-00" maxlength="14">
+      </div>
+      <div class="form-group">
+        <label>Tipo de moradia</label>
+        <select id="vol-moradia">
+          <option value="">Selecione...</option>
+          <option value="casa_com_quintal">Casa com quintal</option>
+          <option value="apartamento">Apartamento</option>
+          <option value="casa_sem_quintal">Casa sem quintal</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Upload de documentos (RG)</label>
+        <input type="file" id="vol-doc-rg" accept=".pdf,.jpg,.jpeg,.png" data-doc="rg">
+        <small style="color:#7a5c42">PDF, JPG ou PNG • Max 5MB</small>
+      </div>
+      <div class="form-group">
+        <label>Comprovante de endereço</label>
+        <input type="file" id="vol-doc-comprovante" accept=".pdf,.jpg,.jpeg,.png" data-doc="comprovante">
+        <small style="color:#7a5c42">PDF, JPG ou PNG • Max 5MB</small>
+      </div>
+      <div class="form-group">
+        <label>Atestado de antecedentes</label>
+        <input type="file" id="vol-doc-antecedentes" accept=".pdf,.jpg,.jpeg,.png" data-doc="antecedentes">
+        <small style="color:#7a5c42">PDF, JPG ou PNG • Max 5MB</small>
+      </div>
+      <button class="btn-primary" style="width:100%;margin-top:8px" onclick="enviarCadastroVoluntario()">Enviar cadastro →</button>
+    </div>
+
+    <div class="vol-benefits">
+      <h3>Por que ser voluntário?</h3>
+      <div class="benefit-item">
+        <div class="benefit-icon">🏠</div>
+        <div class="benefit-text">
+          <h4>Ajuda a descentralizar o abrigo</h4>
+          <p>Com a sede suportando até 30 animais, os lares temporários são vitais para que possamos resgatar mais.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🐾</div>
+        <div class="benefit-text">
+          <h4>Você acolhe, nós cuidamos</h4>
+          <p>A ONG cobre todos os custos veterinários e de alimentação dos animais em lar temporário.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🔒</div>
+        <div class="benefit-text">
+          <h4>Processo seguro e transparente</h4>
+          <p>A investigação social protege tanto o voluntário quanto os animais. Seus documentos são criptografados e acessados somente pelo administrador.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🌟</div>
+        <div class="benefit-text">
+          <h4>Prioridade nos "Cachorros Invisíveis"</h4>
+          <p>Voluntários validados têm acesso prioritário para acolher animais de longa estadia que mais precisam de atenção.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">GEO <span>Pet</span> Care</div>
+        <p class="footer-desc">ONG dedicada ao resgate e adoção responsável de animais. Guarulhos, SP — desde 2019.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Adoção</h4>
+        <a href="javascript:void(0)" onclick="abrirModalQuiz()">Fazer o Quiz</a>
+        <a href="#pets">Ver Animais</a>
+      </div>
+      <div class="footer-col">
+        <h4>ONG</h4>
+        <a href="login.html">Painel Administrativo</a>
+        <a href="#transparencia">Transparência</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 GEO Pet Care · Dados Reais do MySQL</span>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="doacao-modal">
+    <div class="modal">
+      <button class="modal-close" onclick="fecharModalDoacao()">×</button>
+      <div class="modal-emoji" id="modal-doacao-emoji">❤️</div>
+      <div class="modal-title" id="modal-doacao-title"></div>
+      <div class="modal-text" id="modal-doacao-text"></div>
+      <div id="modal-doacao-extra" style="background: var(--warm); border-radius: 12px; padding: 1rem; text-align: left; display: none;"></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="quiz-modal">
+    <div class="modal" style="max-width: 600px; text-align: left; padding: 2.5rem; max-height: 90vh; overflow-y: auto;">
+      <button class="modal-close" onclick="fecharModalQuiz()">×</button>
+      <div class="quiz-title" style="margin-bottom: 1.5rem; text-align: center;">🐾 Quiz de Compatibilidade</div>
+      <div id="quiz-form">
+        <div class="quiz-step-counter" id="quiz-step-counter">Pergunta 1 de 8</div>
+        <div class="quiz-question active">
+          <label>Tipo de moradia</label>
+          <div class="quiz-options">
+            <button class="quiz-opt active" data-group="tipo_moradia" data-val="casa_com_quintal" onclick="selectOpt(this)">🏠 Casa com quintal</button>
+            <button class="quiz-opt" data-group="tipo_moradia" data-val="apartamento" onclick="selectOpt(this)">🏢 Apartamento</button>
+            <button class="quiz-opt" data-group="tipo_moradia" data-val="casa_sem_quintal" onclick="selectOpt(this)">🏡 Casa sem quintal</button>
+          </div>
+        </div>
+        <div class="quiz-question">
+          <label>Experiência com pets</label>
+          <div class="quiz-options">
+            <button class="quiz-opt active" data-group="experiencia_previa" data-val="iniciante" onclick="selectOpt(this)">🌱 Iniciante</button>
+            <button class="quiz-opt" data-group="experiencia_previa" data-val="intermediario" onclick="selectOpt(this)">🌿 Intermediário</button>
+            <button class="quiz-opt" data-group="experiencia_previa" data-val="avancado" onclick="selectOpt(this)">🌳 Avançado</button>
+          </div>
+        </div>
+        <div class="quiz-question">
+          <label>Prefere espécie</label>
+          <div class="quiz-options">
+            <button class="quiz-opt active" data-group="preferencia_especie" data-val="qualquer" onclick="selectOpt(this)">🐾 Qualquer</button>
+            <button class="quiz-opt" data-group="preferencia_especie" data-val="cachorro" onclick="selectOpt(this)">🐶 Cachorro</button>
+            <button class="quiz-opt" data-group="preferencia_especie" data-val="gato" onclick="selectOpt(this)">🐱 Gato</button>
+          </div>
+        </div>
+        <div class="quiz-question">
+          <label>Prefere porte</label>
+          <div class="quiz-options">
+            <button class="quiz-opt active" data-group="preferencia_porte" data-val="qualquer" onclick="selectOpt(this)">📏 Qualquer</button>
+            <button class="quiz-opt" data-group="preferencia_porte" data-val="pequeno" onclick="selectOpt(this)">🐕 Pequeno</button>
+            <button class="quiz-opt" data-group="preferencia_porte" data-val="medio" onclick="selectOpt(this)">🐕 Médio</button>
+            <button class="quiz-opt" data-group="preferencia_porte" data-val="grande" onclick="selectOpt(this)">🐕 Grande</button>
+          </div>
+        </div>
+        <div class="quiz-question">
+          <label>Prefere energia</label>
+          <div class="quiz-options">
+            <button class="quiz-opt active" data-group="preferencia_energia" data-val="qualquer" onclick="selectOpt(this)">⚡ Qualquer</button>
+            <button class="quiz-opt" data-group="preferencia_energia" data-val="baixo" onclick="selectOpt(this)">😌 Baixa</button>
+            <button class="quiz-opt" data-group="preferencia_energia" data-val="moderado" onclick="selectOpt(this)">😃 Moderada</button>
+            <button class="quiz-opt" data-group="preferencia_energia" data-val="alto" onclick="selectOpt(this)">🚀 Alta</button>
+          </div>
+        </div>
+        <div class="quiz-question">
+          <label>Possui crianças em casa?</label>
+          <div class="quiz-options">
+            <button class="quiz-opt active" data-group="possui_criancas" data-val="1" onclick="selectOpt(this)">👍 Sim</button>
+            <button class="quiz-opt" data-group="possui_criancas" data-val="0" onclick="selectOpt(this)">👎 Não</button>
+          </div>
+        </div>
+        <div class="quiz-question">
+          <label>Possui outros animais?</label>
+          <div class="quiz-options">
+            <button class="quiz-opt active" data-group="possui_outros_animais" data-val="1" onclick="selectOpt(this)">👍 Sim</button>
+            <button class="quiz-opt" data-group="possui_outros_animais" data-val="0" onclick="selectOpt(this)">👎 Não</button>
+          </div>
+        </div>
+        <div class="quiz-question">
+          <label>Horas livres por dia</label>
+          <div class="quiz-options quiz-options-grid">
+            <button class="quiz-opt active" data-group="tempo_livre_diario_h" data-val="2" onclick="selectOpt(this)">2h</button>
+            <button class="quiz-opt" data-group="tempo_livre_diario_h" data-val="4" onclick="selectOpt(this)">4h</button>
+            <button class="quiz-opt" data-group="tempo_livre_diario_h" data-val="6" onclick="selectOpt(this)">6h</button>
+            <button class="quiz-opt" data-group="tempo_livre_diario_h" data-val="8" onclick="selectOpt(this)">8h+</button>
+          </div>
+        </div>
+        
+        <div class="quiz-nav" id="quiz-nav-buttons">
+          <button class="quiz-nav-btn" id="btn-quiz-prev" onclick="prevQuestion()" disabled>← Voltar</button>
+          <button class="quiz-nav-btn primary" id="btn-quiz-next" onclick="nextQuestion()">Próxima →</button>
+        </div>
+        <button class="quiz-btn" id="btn-quiz-submit" onclick="processarMatch()" style="display:none; margin-top: 1.5rem;">Ver meus matches →</button>
+        
+        <div id="match-results" class="match-results" style="display:none;">
+          <div class="match-results-header">
+            <div>
+              <p class="section-tag">Resultado</p>
+              <h3 class="section-title" style="margin:0; font-size:1.4rem;">Pets compatíveis</h3>
+            </div>
+            <button class="match-close" onclick="closeMatchResults()">Fechar</button>
+          </div>
+          <div id="match-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="JS/script.js"></script>
+</body>
+</html>

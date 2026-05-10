@@ -1,0 +1,205 @@
+<!-- VIEW ANIMAIS -->
+<div id="view-animais" class="view-section">
+  <div class="alert-banner" id="alert-invisiveis" style="display:none;">
+    <span class="alert-icon">⚠️</span>
+    <div class="alert-text">
+      <strong>Atenção:</strong> Existem animais aguardando adoção há mais de 3 meses. Considere acionar lares temporários.
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-top"><span class="stat-icon">🐾</span></div>
+      <div class="stat-num" id="stat-ativos">0</div>
+      <div class="stat-label">Animais na sede</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-top"><span class="stat-icon">✅</span></div>
+      <div class="stat-num" id="stat-disponiveis">0</div>
+      <div class="stat-label">Disponíveis p/ adoção</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-top"><span class="stat-icon">🏥</span></div>
+      <div class="stat-num" id="stat-triagem">0</div>
+      <div class="stat-label">Triagem pendente</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-top"><span class="stat-icon">🔴</span></div>
+      <div class="stat-num" id="stat-invisiveis">0</div>
+      <div class="stat-label">Cachorros invisíveis</div>
+    </div>
+  </div>
+
+  <div class="panels">
+    <div class="table-section">
+      <div class="view-header">
+        <div class="view-title">Listagem de Animais <span id="count-badge">(0)</span></div>
+        <div class="view-controls">
+          <select class="filter-select" id="filter-status" onchange="filterTable()">
+            <option value="">Todos os status</option>
+            <option value="disponivel">Disponível</option>
+            <option value="em_processo">Em Processo</option>
+            <option value="lar_temporario">Lar Temporário</option>
+            <option value="adotado">Adotado</option>
+          </select>
+          <select class="filter-select" id="filter-risco" onchange="filterTable()">
+            <option value="">Todos os riscos</option>
+            <option value="baixo">Baixo</option>
+            <option value="medio">Médio</option>
+            <option value="grave">Grave</option>
+            <option value="critico">Crítico</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <div class="table-toolbar">
+          <input class="search-input" id="admin-search" placeholder="Buscar por nome, raça, código…" oninput="searchTable(this.value)">
+          <div style="display:flex;gap:0.5rem;">
+            <button class="topbar-btn" onclick="exportarCSV()">↓ Exportar</button>
+          </div>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="animals-table">
+            <thead>
+              <tr>
+                <th>CÓDIGO</th>
+                <th>ANIMAL</th>
+                <th>RISCO</th>
+                <th>STATUS</th>
+                <th>PORTE</th>
+                <th>ESTADIA</th>
+                <th>AÇÕES</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-panel">
+      <div class="form-panel" id="form-panel">
+        <div class="panel-header">
+          <div class="panel-title" id="form-panel-title">🐾 Novo Resgate</div>
+          <button class="panel-close" onclick="closeForm()">×</button>
+        </div>
+
+        <div class="form-body">
+          <div class="form-section-title">// Identificação</div>
+          <div class="form-group">
+            <label class="form-label">Código/Microchip</label>
+            <input class="form-input" id="field-codigo" placeholder="Ex: GEO-001">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Nome <span class="req">*</span></label>
+              <input class="form-input" id="field-nome" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Espécie <span class="req">*</span></label>
+              <select class="form-select" id="field-especie">
+                <option value="cachorro">Cachorro</option>
+                <option value="gato">Gato</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Raça</label>
+              <input class="form-input" id="field-raca" placeholder="SRD">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Porte</label>
+              <select class="form-select" id="field-porte">
+                <option value="pequeno">Pequeno</option>
+                <option value="medio">Médio</option>
+                <option value="grande">Grande</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Idade estimada</label>
+              <input class="form-input" id="field-idade" placeholder="Ex: 2 anos">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Data do resgate</label>
+              <input class="form-input" type="date" id="field-data-resgate">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Nível de energia</label>
+              <select class="form-select" id="field-energia">
+                <option value="baixo">Baixo</option>
+                <option value="moderado">Moderado</option>
+                <option value="alto">Alto</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Compatível com crianças</label>
+              <select class="form-select" id="field-criancas">
+                <option value="1">Sim</option>
+                <option value="0">Não</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Compatível com outros animais</label>
+              <select class="form-select" id="field-outros-animais">
+                <option value="1">Sim</option>
+                <option value="0">Não</option>
+              </select>
+            </div>
+            <div class="form-group"></div>
+          </div>
+
+          <div class="form-section-title">// Triagem Médica</div>
+          <div class="form-group">
+            <label class="form-label">Classificação de Risco</label>
+            <div class="risk-selector">
+              <button class="risk-opt" data-risk="critico" onclick="selectRisk('critico')">🔴 Crítico</button>
+              <button class="risk-opt" data-risk="grave" onclick="selectRisk('grave')">🟠 Grave</button>
+              <button class="risk-opt" data-risk="medio" onclick="selectRisk('medio')">🔵 Médio</button>
+              <button class="risk-opt selected" data-risk="baixo" onclick="selectRisk('baixo')">🟢 Baixo</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Laudo/Observações</label>
+            <textarea class="form-textarea" id="field-laudo"></textarea>
+          </div>
+
+          <div class="form-section-title">// Flags Match</div>
+          <div class="toggle-container">
+            <label class="toggle-row"><span>Castrado</span><input type="checkbox" id="check-castrado"></label>
+            <label class="toggle-row"><span>Vacinado</span><input type="checkbox" id="check-vacinado"></label>
+            <label class="toggle-row"><span>Especial</span><input type="checkbox" id="check-especial"></label>
+          </div>
+        </div>
+
+        <div class="form-footer">
+          <button class="btn-cancel" onclick="closeForm()">Cancelar</button>
+          <button class="btn-save" onclick="saveAnimal()">✓ Salvar no MySQL</button>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-header">📋 Regras de Negócio</div>
+        <div class="info-card-body">
+          <small><strong>RN01:</strong> Animais Críticos/Graves não aparecem no site.</small><br>
+          <small><strong>RN02:</strong> Sede limitada a 30 vagas.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

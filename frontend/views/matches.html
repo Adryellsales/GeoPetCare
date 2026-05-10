@@ -1,0 +1,32 @@
+<!-- VIEW MATCHES -->
+<div id="view-matches" class="view-section" style="display:none;">
+  <div class="view-header">
+    <div class="view-title">Matches de Adoção</div>
+    <div class="view-actions">
+      <select id="filter-matches" onchange="renderMatches()" class="filter-select">
+          <option value="">Todos os status</option>
+          <option value="sugerido">Sugerido</option>
+          <option value="interesse">Interesse</option>
+          <option value="entrevista">Entrevista</option>
+          <option value="aprovado">Aprovado</option>
+          <option value="recusado">Recusado</option>
+        </select>
+      </div>
+    </div>
+    <div class="table-wrapper">
+      <div style="overflow-x:auto;">
+        <table class="animals-table">
+          <thead>
+            <tr>
+              <th>ANIMAL</th>
+              <th>ADOTANTE</th>
+              <th>SCORE</th>
+              <th>STATUS</th>
+              <th>CRIADO EM</th>
+            </tr>
+          </thead>
+          <tbody id="table-matches-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>

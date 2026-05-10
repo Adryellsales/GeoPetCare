@@ -1,0 +1,34 @@
+<!-- VIEW ADOTANTES -->
+<div id="view-adotantes" class="view-section" style="display:none;">
+  <div class="view-header">
+    <div class="view-title">Adotantes Cadastrados <span id="count-adotantes">(0)</span></div>
+    <div class="view-controls">
+      <select class="filter-select" id="filter-adotantes" onchange="renderAdotantes()">
+          <option value="">Todos os perfis</option>
+          <option value="cachorro">Prefere Cachorro</option>
+          <option value="gato">Prefere Gato</option>
+          <option value="qualquer">Qualquer</option>
+        </select>
+      </div>
+    </div>
+    <div class="table-wrapper">
+      <div class="table-toolbar">
+        <input class="search-input" id="search-adotantes" placeholder="Buscar por nome, e-mail…" oninput="searchAdotantes(this.value)">
+      </div>
+      <div style="overflow-x:auto;">
+        <table class="animals-table">
+          <thead>
+            <tr>
+              <th>ADOTANTE</th>
+              <th>MORADIA</th>
+              <th>EXPERIÊNCIA</th>
+              <th>PREFERÊNCIA</th>
+              <th>HORAS DISPONÍVEIS</th>
+            </tr>
+          </thead>
+          <tbody id="table-adotantes-body">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
