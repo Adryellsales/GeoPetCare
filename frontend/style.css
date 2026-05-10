@@ -598,4 +598,6 @@
 .pet-tile:hover .pet-tile-img {
     filter: brightness(0.9);
     transform: scale(1.02);
+    font-family: 'Courier New', Courier, monospace;
 }
+
