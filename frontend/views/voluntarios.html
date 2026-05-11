@@ -1,0 +1,64 @@
+<!-- VIEW VOLUNTÁRIOS -->
+<div id="view-voluntarios" class="view-section" style="display:none;">
+  <div class="view-header">
+    <div class="view-title">Voluntários e Lares Temporários</div>
+    <div class="view-actions">
+      <select id="filter-vol-status" onchange="filterVoluntarios()">
+        <option value="">Todos os status</option>
+        <option value="pendente">Pendente</option>
+        <option value="em_analise">Em Análise</option>
+        <option value="aprovado">Aprovado</option>
+        <option value="aguardando_correcao">Aguardando Correção</option>
+        <option value="reprovado">Reprovado</option>
+      </select>
+    </div>
+  </div>
+  <div class="table-wrapper">
+    <div style="overflow-x:auto;">
+      <table class="animals-table">
+        <thead>
+          <tr>
+            <th>NOME</th>
+            <th>CPF</th>
+            <th>MORADIA</th>
+            <th>STATUS</th>
+            <th>DOCS</th>
+            <th>AÇÕES</th>
+          </tr>
+        </thead>
+        <tbody id="table-voluntarios-body">
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL VALIDAÇÃO VOLUNTÁRIO -->
+<div id="modal-voluntario" class="modal" style="display:none;">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Validação de Voluntário</h3>
+      <button class="modal-close" onclick="closeModalVoluntario()">×</button>
+    </div>
+    <div class="modal-body">
+      <div id="voluntario-info"></div>
+      <div class="checklist">
+        <h4>Checklist de Documentos</h4>
+        <label><input type="checkbox" id="check-rg"> RG OK</label>
+        <label><input type="checkbox" id="check-comprovante"> Comprovante de Residência OK</label>
+        <label><input type="checkbox" id="check-antecedentes"> Certidão de Antecedentes OK</label>
+        <label><input type="checkbox" id="check-investigacao"> Investigação OK</label>
+      </div>
+      <div class="form-group">
+        <label>Motivo de Reprovação (se aplicável)</label>
+        <textarea id="motivo-reprovacao" placeholder="Explique o motivo..."></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModalVoluntario()">Cancelar</button>
+      <button class="btn-danger" onclick="validarVoluntario('reprovar')">Reprovar</button>
+      <button class="btn-warning" onclick="validarVoluntario('aguardando_correcao')">Aguardando Correção</button>
+      <button class="btn-success" onclick="validarVoluntario('aprovar')">Aprovar</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,91 @@
+<!-- VIEW DASHBOARD -->
+<div id="view-dashboard" class="view-section" style="display:none;">
+  <div class="view-header">
+    <div class="view-title">Dashboard Administrativo</div>
+    <div class="view-subtitle">Visão geral do sistema GeoPetCare</div>
+  </div>
+
+  <div class="dashboard-grid">
+    <!-- Cards de Estatísticas -->
+    <div class="stats-row" style="grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+      <div class="stat-card">
+        <div class="stat-top"><span class="stat-icon">🐾</span></div>
+        <div class="card-content">
+          <div class="stat-num" id="dash-total-animais">0</div>
+          <div class="stat-label">Animais Cadastrados</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-top"><span class="stat-icon">🏠</span></div>
+        <div class="card-content">
+          <div class="stat-num" id="dash-voluntarios-ativos">0</div>
+          <div class="stat-label">Voluntários Ativos</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-top"><span class="stat-icon">👤</span></div>
+        <div class="card-content">
+          <div class="stat-num" id="dash-total-adotantes">0</div>
+          <div class="stat-label">Adotantes Registrados</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-top"><span class="stat-icon">🧩</span></div>
+        <div class="card-content">
+          <div class="stat-num" id="dash-matches-ativos">0</div>
+          <div class="stat-label">Matches Ativos</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-top"><span class="stat-icon">💚</span></div>
+        <div class="card-content">
+          <div class="stat-num" id="dash-doacoes-mes">R$ 0</div>
+          <div class="stat-label">Arrecadação do Mês</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-top"><span class="stat-icon">🏥</span></div>
+        <div class="card-content">
+          <div class="stat-num" id="dash-triagem-pendente">0</div>
+          <div class="stat-label">Triagens Pendentes</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gráfico ou Tabela de Resumo -->
+  <div class="dashboard-section">
+    <h3 class="view-title">Status dos Animais</h3>
+    <div class="stat-row" style="display:flex; gap:1.5rem; flex-wrap:wrap; margin-top:1rem; margin-bottom:1rem;">
+      <div class="stat-card">
+        <span class="status-dot status-disponivel"></span>
+        <span>Disponíveis: <strong id="dash-disponiveis">0</strong></span>
+      </div>
+      <div class="stat-card">
+        <span class="status-dot status-processo"></span>
+        <span>Em Processo: <strong id="dash-processo">0</strong></span>
+      </div>
+      <div class="stat-card">
+        <span class="status-dot status-adotado"></span>
+        <span>Adotados: <strong id="dash-adotados">0</strong></span>
+      </div>
+      <div class="stat-card">
+        <span class="status-dot status-lar"></span>
+        <span>Lar Temporário: <strong id="dash-lar-temp">0</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Alertas -->
+  <div class="dashboard-section">
+    <h3 class="view-title">Alertas do Sistema</h3>
+    <div id="dashboard-alerts">
+      <div class="alert-info, stat-card" style="display:flex; gap:1.5rem; flex-wrap:wrap; margin-top:1rem; margin-bottom:1rem;">Sistema funcionando normalmente ✅</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>GEO Pet Care · Back-office Admin</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Syne:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styleadmin.css">
+
+</head>
+
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">🐾</div>
+      <div>
+        <div class="logo-text">GEO <span>Pet</span></div>
+        <div class="logo-sub">BACK-OFFICE v2.1</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Principal</div>
+      <button class="nav-item" onclick="setView('dashboard')">
+        <span class="nav-icon">◈</span> Dashboard
+      </button>
+      <button class="nav-item active" onclick="setView('animais')">
+        <span class="nav-icon">🐾</span> Animais
+        <span class="nav-badge green" id="badge-total-animais">...</span>
+      </button>
+      <button class="nav-item" onclick="setView('triagem')">
+        <span class="nav-icon">🏥</span> Triagem Médica
+        <span class="nav-badge" id="badge-triagem">...</span>
+      </button>
+
+      <div class="nav-section-label">Pessoas</div>
+      <button class="nav-item" onclick="setView('voluntarios')">
+        <span class="nav-icon">🏠</span> Voluntários
+        <span class="nav-badge" id="badge-voluntarios">...</span>
+      </button>
+      <button class="nav-item" onclick="setView('adotantes')">
+        <span class="nav-icon">👤</span> Adotantes
+      </button>
+      <button class="nav-item" onclick="setView('matches')">
+        <span class="nav-icon">🧩</span> Matches
+      </button>
+      <button class="nav-item" onclick="setView('doacoes')">
+        <span class="nav-icon">💚</span> Doações
+      </button>
+      <div class="nav-section-label">Gestão</div>
+      <button class="nav-item" onclick="setView('transparencia')">
+        <span class="nav-icon">📊</span> Transparência
+      </button>
+      <button class="nav-item" onclick="setView('config')">
+        <span class="nav-icon">⚙</span> Configurações
+      </button>
+    </nav>
+    <div class="sidebar-user" id="user-info">
+      <div class="user-avatar" id="admin-avatar">??</div>
+      <div>
+        <div class="user-name" id="admin-nome">Carregando...</div>
+        <div class="user-role" id="admin-perfil">ADMIN</div>
+      </div>
+    </div>
+  </aside>
+
+
+
+  <main class="main">
+    <div class="topbar">
+      <div class="topbar-left">
+        <span class="breadcrumb">GEO Pet Care / <span id="current-view-name">Animais</span></span>
+      </div>
+      <div class="topbar-right">
+        <div class="capacity-pill">
+          <div class="capacity-dot" id="status-dot"></div>
+          <span id="txt-capacidade-topbar">Sede: ... / 30 animais</span>
+        </div>
+        <button class="topbar-btn secondary" onclick="logoutAdmin()">Sair</button>
+        <button class="topbar-btn primary" onclick="openForm()">+ Novo Resgate</button>
+      </div>
+    </div>
+
+    <div class="content" id="content"></div>
+  </main>
+
+
+
+  <div class="toast" id="toast">
+    <span class="toast-icon" id="toast-icon">✅</span>
+    <div>
+      <div class="toast-title" id="toast-title">Ação realizada!</div>
+      <div class="toast-sub" id="toast-sub">O banco de dados foi atualizado.</div>
+    </div>
+  </div>
+
+  <script src="JS/admin/config.js"></script>
+  <script src="JS/admin/dashboard.js"></script>
+  <script src="JS/admin/animals.js"></script>
+  <script src="JS/admin/voluntarios.js"></script>
+  <script src="JS/admin/triagem.js"></script>
+  <script src="JS/admin/adotantes.js"></script>
+  <script src="JS/admin/matches.js"></script>
+  <script src="JS/admin/transparencia.js"></script>
+</body>
+
+</html>

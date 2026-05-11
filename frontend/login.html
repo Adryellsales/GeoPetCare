@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Administrativo | GEO Pet Care</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styleadmin.css">
+</head>
+<body class="login-page">
+  <main class="login-card">
+    <div>
+      <div class="logo-text" style="font-size:1.5rem; margin-bottom:0.25rem;">GEO <span>Pet</span> Care</div>
+      <p>Painel administrativo seguro para gestão de resgates, triagens e transparência.</p>
+    </div>
+
+    <div id="login-error" class="empty-state" style="display:none; background: rgba(255,255,255,0.07); border-radius: 16px; margin-bottom: 1rem; color:#FECACA;"></div>
+
+    <input id="email" class="login-field" type="email" placeholder="E-mail" autocomplete="username">
+    <input id="senha" class="login-field" type="password" placeholder="Senha" autocomplete="current-password">
+    <button class="login-button" onclick="submitLogin()">Entrar no painel</button>
+
+    <div class="login-footer">
+      <span>Use as credenciais do administrador ou do veterinário.</span>
+    </div>
+  </main>
+  <script src="JS/login.js"></script>
+</body>
+</html>
