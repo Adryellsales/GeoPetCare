@@ -568,3 +568,159 @@ body {
   font-size: 0.82rem;
 }
 .login-link { color: var(--accent); text-decoration: none; }
+
+/* Container Principal (Overlay) */
+.modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo escurecido */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px); /* Efeito de desfoque ao fundo */
+}
+
+/* Caixa do Modal */
+.modal-content {
+  background-color: var(--surface);
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cabeçalho */
+.modal-header {
+  padding: 16px 24px;
+  background-color: var(--surface);
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+/* Corpo do Modal */
+.modal-body {
+  padding: 24px;
+}
+
+#voluntario-info {
+  margin-bottom: 20px;
+  padding: 12px;
+  background-color: var(--surface);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+/* Checklist */
+.checklist {
+  margin-bottom: 24px;
+}
+
+.checklist h4 {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.checklist label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.checklist input[type="checkbox"] {
+  margin-right: 12px;
+  width: 18px;
+  height: 18px;
+  accent-color: #28a745; /* Cor do check quando marcado */
+}
+
+/* Campo de Texto */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+textarea#motivo-reprovacao {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px;
+  border: 1px solid var(--surface2);
+  background-color: var(--surface2);
+  border-radius: 6px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* Rodapé e Botões */
+.modal-footer {
+  padding: 16px 24px;
+  background-color: var(--surface);
+  border-top: 1px solid var(--surface2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex;
+}
+
+.modal-footer button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: filter 0.2s, transform 0.1s;
+}
+
+.modal-footer button:active {
+  transform: scale(0.98);
+}
+
+.btn-cancel { background-color: #e0e0e0; color: #333; }
+.btn-danger { background-color: #dc3545; color: white; }
+.btn-warning { background-color: #ffc107; color: #212529; }
+.btn-success { background-color: #28a745; color: white; }
+
+.modal-footer button:hover {
+  filter: brightness(90%);
+}
