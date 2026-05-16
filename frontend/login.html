@@ -4,26 +4,112 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Administrativo | GEO Pet Care</title>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styleadmin.css">
+  <meta name="description" content="Acesse o painel administrativo da GEO Pet Care para gerenciar resgates, triagens e adoções.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/style.css">
+  <style>
+    body { background: linear-gradient(135deg, var(--cream) 0%, var(--warm) 60%, var(--sage-light) 100%); min-height:100vh; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+    body::before { content:'🐾'; position:absolute; top:60px; left:80px; font-size:10rem; opacity:.04; transform:rotate(15deg); pointer-events:none; }
+    body::after { content:'🐾'; position:absolute; bottom:40px; right:60px; font-size:14rem; opacity:.04; transform:rotate(-20deg); pointer-events:none; }
+
+    .login-wrapper { display:flex; align-items:center; gap:60px; max-width:900px; width:92%; animation: fadeUp .6s ease both; }
+    .login-branding { flex:1; min-width:260px; }
+    .login-branding .nav-logo { font-size:2.2rem; margin-bottom:16px; display:block; }
+    .login-branding h1 { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,3vw,2.4rem); font-weight:900; line-height:1.1; margin-bottom:16px; color:var(--deep); }
+    .login-branding h1 em { font-style:normal; color:var(--terra); }
+    .login-branding p { font-size:.95rem; color:#5a3e2b; line-height:1.7; margin-bottom:24px; }
+    .login-features { display:flex; flex-direction:column; gap:14px; }
+    .login-feature { display:flex; align-items:center; gap:12px; font-size:.88rem; color:#6b4f38; }
+    .login-feature-icon { width:36px; height:36px; background:rgba(122,158,126,.15); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+
+    .login-card { background:var(--white); border-radius:24px; padding:40px; width:380px; flex-shrink:0; border:1.5px solid var(--warm); box-shadow:0 20px 60px rgba(44,26,14,.1); }
+    .login-card-header { text-align:center; margin-bottom:28px; }
+    .login-card-header .section-tag { margin-bottom:8px; }
+    .login-card-header h2 { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:900; color:var(--deep); }
+    .login-card-header p { font-size:.85rem; color:#7a5c42; margin-top:6px; }
+
+    .login-form-group { margin-bottom:16px; }
+    .login-form-group label { display:block; font-size:.82rem; font-weight:600; margin-bottom:6px; color:var(--deep); }
+    .login-form-group input { width:100%; padding:13px 16px; border-radius:12px; border:1.5px solid var(--warm); background:var(--cream); font-size:.9rem; font-family:'DM Sans',sans-serif; color:var(--deep); transition:.25s; outline:none; }
+    .login-form-group input:focus { border-color:var(--terra); background:var(--white); box-shadow:0 0 0 3px rgba(192,123,62,.1); }
+    .login-form-group input::placeholder { color:#b8a090; }
+
+    .login-error { display:none; background:rgba(214,69,39,.08); border:1px solid rgba(214,69,39,.2); border-radius:12px; padding:12px 16px; font-size:.85rem; color:var(--danger); margin-bottom:16px; text-align:center; }
+
+    .login-submit { width:100%; background:var(--rust); color:var(--white); padding:14px; border-radius:50px; font-weight:600; font-size:1rem; border:none; cursor:pointer; transition:.25s; font-family:'DM Sans',sans-serif; }
+    .login-submit:hover { background:var(--deep); transform:translateY(-2px); box-shadow:0 8px 24px rgba(44,26,14,.2); }
+
+    .login-footer { text-align:center; margin-top:20px; font-size:.82rem; color:#7a5c42; }
+    .login-footer a { color:var(--terra); font-weight:600; text-decoration:none; transition:.2s; }
+    .login-footer a:hover { color:var(--rust); }
+
+    .login-divider { display:flex; align-items:center; gap:12px; margin:20px 0; }
+    .login-divider span { font-size:.78rem; color:#b8a090; white-space:nowrap; }
+    .login-divider::before, .login-divider::after { content:''; flex:1; height:1px; background:var(--warm); }
+
+    @media (max-width:768px) {
+      .login-wrapper { flex-direction:column; gap:32px; }
+      .login-branding { text-align:center; min-width:auto; }
+      .login-card { width:100%; max-width:400px; }
+      .login-features { align-items:center; }
+    }
+  </style>
 </head>
-<body class="login-page">
-  <main class="login-card">
-    <div>
-      <div class="logo-text" style="font-size:1.5rem; margin-bottom:0.25rem;">GEO <span>Pet</span> Care</div>
-      <p>Painel administrativo seguro para gestão de resgates, triagens e transparência.</p>
+<body>
+
+  <div class="login-wrapper">
+    <div class="login-branding">
+      <span class="nav-logo">GEO <span>Pet</span> Care</span>
+      <h1>Painel <em>administrativo</em> seguro</h1>
+      <p>Gerencie resgates, triagens médicas, voluntários e o portal de transparência em um único lugar.</p>
+      <div class="login-features">
+        <div class="login-feature">
+          <div class="login-feature-icon">🐾</div>
+          <span>Gestão completa de animais resgatados</span>
+        </div>
+        <div class="login-feature">
+          <div class="login-feature-icon">🏥</div>
+          <span>Triagem médica e classificação de risco</span>
+        </div>
+        <div class="login-feature">
+          <div class="login-feature-icon">🏠</div>
+          <span>Validação de voluntários e lares temporários</span>
+        </div>
+        <div class="login-feature">
+          <div class="login-feature-icon">📊</div>
+          <span>Portal de transparência em tempo real</span>
+        </div>
+      </div>
     </div>
 
-    <div id="login-error" class="empty-state" style="display:none; background: rgba(255,255,255,0.07); border-radius: 16px; margin-bottom: 1rem; color:#FECACA;"></div>
+    <main class="login-card">
+      <div class="login-card-header">
+        <div class="section-tag">Acesso restrito</div>
+        <h2>Entrar no Painel</h2>
+        <p>Use suas credenciais de administrador ou veterinário</p>
+      </div>
 
-    <input id="email" class="login-field" type="email" placeholder="E-mail" autocomplete="username">
-    <input id="senha" class="login-field" type="password" placeholder="Senha" autocomplete="current-password">
-    <button class="login-button" onclick="submitLogin()">Entrar no painel</button>
+      <div id="login-error" class="login-error"></div>
 
-    <div class="login-footer">
-      <span>Use as credenciais do administrador ou do veterinário.</span>
-    </div>
-  </main>
+      <div class="login-form-group">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" placeholder="admin@geopetcare.org.br" autocomplete="username">
+      </div>
+      <div class="login-form-group">
+        <label for="senha">Senha</label>
+        <input id="senha" type="password" placeholder="••••••••" autocomplete="current-password">
+      </div>
+
+      <button class="login-submit" onclick="submitLogin()">Entrar no painel →</button>
+
+      <div class="login-divider"><span>ou</span></div>
+
+      <div class="login-footer">
+        <a href="geo_pet_care.html">← Voltar ao site principal</a>
+      </div>
+    </main>
+  </div>
+
   <script src="JS/login.js"></script>
 </body>
 </html>

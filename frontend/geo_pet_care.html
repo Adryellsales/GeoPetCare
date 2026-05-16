@@ -272,23 +272,31 @@
     <div class="vol-form">
       <h3>Cadastro de Voluntário</h3>
       <div class="form-group">
-        <label>Nome completo</label>
+        <label>Nome completo *</label>
         <input type="text" id="vol-nome" placeholder="Seu nome completo">
       </div>
       <div class="form-group">
-        <label>E-mail</label>
+        <label>E-mail *</label>
         <input type="email" id="vol-email" placeholder="seu@email.com">
       </div>
       <div class="form-group">
-        <label>Senha</label>
-        <input type="password" id="vol-senha" placeholder="Crie uma senha segura">
+        <label>Senha *</label>
+        <input type="password" id="vol-senha" placeholder="Crie uma senha segura (mín. 6 caracteres)">
       </div>
       <div class="form-group">
-        <label>CPF</label>
+        <label>Telefone / WhatsApp *</label>
+        <input type="tel" id="vol-telefone" placeholder="(11) 99999-0000" maxlength="15">
+      </div>
+      <div class="form-group">
+        <label>CPF *</label>
         <input type="text" id="vol-cpf" placeholder="000.000.000-00" maxlength="14">
       </div>
       <div class="form-group">
-        <label>Tipo de moradia</label>
+        <label>Cidade / Bairro</label>
+        <input type="text" id="vol-cidade" placeholder="Ex: Guarulhos — Centro">
+      </div>
+      <div class="form-group">
+        <label>Tipo de moradia *</label>
         <select id="vol-moradia">
           <option value="">Selecione...</option>
           <option value="casa_com_quintal">Casa com quintal</option>
@@ -297,15 +305,45 @@
         </select>
       </div>
       <div class="form-group">
-        <label>RG (PDF, JPG ou PNG • Max 5MB)</label>
+        <label>Experiência com animais</label>
+        <select id="vol-experiencia">
+          <option value="">Selecione...</option>
+          <option value="nenhuma">Nenhuma — primeiro contato</option>
+          <option value="basica">Básica — já tive pets</option>
+          <option value="intermediaria">Intermediária — cuidei de animais resgatados</option>
+          <option value="avancada">Avançada — voluntário em outras ONGs</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Disponibilidade para acolhimento</label>
+        <select id="vol-disponibilidade">
+          <option value="">Selecione...</option>
+          <option value="integral">Integral — fico em casa a maior parte do dia</option>
+          <option value="parcial">Parcial — trabalho fora mas volto à tarde</option>
+          <option value="noturna">Noturna — fico em casa à noite e fins de semana</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Preferência de animal para acolher</label>
+        <select id="vol-preferencia-animal">
+          <option value="qualquer">Sem preferência</option>
+          <option value="cachorro_pequeno">Cachorro pequeno</option>
+          <option value="cachorro_medio_grande">Cachorro médio/grande</option>
+          <option value="gato">Gato</option>
+          <option value="filhotes">Filhotes (qualquer espécie)</option>
+          <option value="especial">Animais com necessidades especiais</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>RG (PDF, JPG ou PNG • Max 5MB) *</label>
         <input type="file" id="vol-doc-rg" accept=".pdf,.jpg,.jpeg,.png">
       </div>
       <div class="form-group">
-        <label>Comprovante de endereço</label>
+        <label>Comprovante de endereço *</label>
         <input type="file" id="vol-doc-comprovante" accept=".pdf,.jpg,.jpeg,.png">
       </div>
       <div class="form-group">
-        <label>Atestado de antecedentes</label>
+        <label>Atestado de antecedentes *</label>
         <input type="file" id="vol-doc-antecedentes" accept=".pdf,.jpg,.jpeg,.png">
       </div>
       <button class="btn-primary" style="width:100%;margin-top:8px"
